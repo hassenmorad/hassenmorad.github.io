@@ -4,7 +4,7 @@ This is where I'll post updates on my portfolio of projects
 
 *The site is currently under construction (please bear with me!)
 
-This is the default github pages text below:
+Below is the default github pages text:
 
 ### Markdown
 
