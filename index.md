@@ -1,8 +1,10 @@
-## Welcome to GitHub Pages
+## Welcome to My Website
 
-You can use the [editor on GitHub](https://github.com/hassenmorad/hassenmorad.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Check back often as I periodically upload my growing portfolio of data science projects!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+*The site is currently under construction (please bear with me!)
+
+This is the default github pages text below:
 
 ### Markdown
 
