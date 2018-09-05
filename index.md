@@ -1,6 +1,6 @@
-## Welcome to My Website
+## Welcome!
 
-Check back often as I periodically upload my growing portfolio of data science projects!
+This is where I'll post updates on my portfolio of projects
 
 *The site is currently under construction (please bear with me!)
 
