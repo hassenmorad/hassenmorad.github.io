@@ -69,6 +69,19 @@
       display: inline-block;
       text-align: center;
     }
+
+    .legend-title {
+      margin: 5px 0px;
+    }
+
+    .legend-key {
+      display: inline-block;
+      border-radius: 20%;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      }
+
   </style>
 </head>
  
@@ -126,6 +139,31 @@ map.setFilter('irvine_theft', filters);
 map.on('load', function() {
   var filterWeek = ['==', ['number', ['get', 'Week_Num']], 1];
   var filterYear = ['==', ['number', ['get', 'Year']], 2011];
+
+  var layers = ['Car Burglary', 'Garage Burglary', 'Package Theft'];
+  var colors = ['#a7023e', '#14adb8', '#a0bd00'];
+
+  // Legend 
+  var legend_title = document.createElement('h3');
+  var legend_text = document.createTextNode('Theft Type:');
+  legend_title.appendChild(legend_text);
+  legend_title.className = 'legend-title';
+  legend.appendChild(legend_title);
+
+  for (i = 0; i < layers.length; i++) {
+      var layer = layers[i];
+      var color = colors[i];
+      var item = document.createElement('div');
+      var key = document.createElement('span');
+      key.className = 'legend-key';
+      key.style.backgroundColor = color;
+
+      var value = document.createElement('span');
+      value.innerHTML = layer;
+      item.appendChild(key);
+      item.appendChild(value);
+      legend.appendChild(item);
+  }
 
 map.addLayer({
   id: 'irvine_theft',
