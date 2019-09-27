@@ -149,10 +149,8 @@ var map = new mapboxgl.Map({
 
 var years = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019]
 function filterBy(year) {
- 
-var filters = ['==', 'Year', year];
-map.setFilter('irvine_theft', filters);
- 
+  var filters = ['==', 'Year', year];
+  map.setFilter('irvine_theft', filters);
 }
  
 map.on('load', function() {
@@ -203,23 +201,23 @@ map.on('load', function() {
       });
   
     document.getElementById('slider').addEventListener('input', function(e) {
-    var week = parseInt(e.target.value);
-    filterWeek = ['==', ['number', ['get', 'Week_Num']], week]
-    map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
+      var week = parseInt(e.target.value);
+      filterWeek = ['==', ['number', ['get', 'Week_Num']], week]
+      map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
 
-    // update text in the UI
-    document.getElementById('week-num').innerText = week;
+      // update text in the UI
+      document.getElementById('week-num').innerText = week;
     });
 
     document.getElementById('filters').addEventListener('change', function(e) {
-    var year = parseInt(e.target.value);
-    filterYear = ['==', ['number', ['get', 'Year']], year]
-
-    map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
+      var year = parseInt(e.target.value);
+      filterYear = ['==', ['number', ['get', 'Year']], year]
+      map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
       
     });
 
     // Displays theft info when clicked
+    /*
     map.on('click', function(e) {
     var features = map.queryRenderedFeatures(e.point, {
         layers: ['irvine_theft'] 
@@ -236,6 +234,7 @@ map.on('load', function() {
         .setHTML('<p><strong>Date: </strong> ' + feature.properties.Date + '</p><p><strong>Type: </strong>' + feature.properties.Type + '</p>')
         .addTo(map);
     });
+    */
 });
 </script>
  
