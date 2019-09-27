@@ -45,6 +45,17 @@
       background-color: white;
     }
 
+    #legend {
+      position: absolute;
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      line-height: 18px;
+      height: 100px;
+      width: 140px;
+      bottom: 40px;
+      left:10px;
+    }
+
     .session {
       margin-bottom: 20px;
     }
@@ -59,15 +70,20 @@
       width: 100%;
     }
 
-    .colors {
-      background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
-      margin-bottom: 5px;
-    }
-
     .label {
       width: 15%;
       display: inline-block;
       text-align: center;
+    }
+
+    .map-overlay {
+      bottom: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.8);
+      margin-right: 20px;
+      font-family: Arial, sans-serif;
+      overflow: auto;
+      border-radius: 3px;
     }
 
     .legend-title {
@@ -117,8 +133,11 @@
    <div class='session' id='sliderbar'>
        <h2>Week: <label id='week-num'>1</label></h2>
        <input id='slider' class='row' type='range' min='1' max='52' step='1' value='1' />
-     </div>
+    </div>
+
  </div>
+
+ <div class='map-overlay' id='legend'></div>
  
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzc2VubW9yYWQiLCJhIjoiY2p5NmR4ejNhMDcyMjNmbzh5NzF4ODFmbCJ9.fZkFuUqq--PXmY_w7iCOdw';
@@ -140,7 +159,7 @@ map.on('load', function() {
   var filterWeek = ['==', ['number', ['get', 'Week_Num']], 1];
   var filterYear = ['==', ['number', ['get', 'Year']], 2011];
 
-  var layers = ['Car Burglary', 'Garage Burglary', 'Package Theft'];
+  var layers = ['Vehicle Burglary', 'Garage Burglary', 'Package Theft'];
   var colors = ['#a7023e', '#14adb8', '#a0bd00'];
 
   // Legend 
@@ -165,41 +184,58 @@ map.on('load', function() {
       legend.appendChild(item);
   }
 
-map.addLayer({
-  id: 'irvine_theft',
-  type: 'circle',
-  source: {
-  type: 'geojson',
-  data: './irvine_thefts_final.geojson'
-  },
-  paint: {'circle-color': [ 'step', ['get', 'Thefttype'],
-    '#ffffff',
-    0, '#a7023e',
-    1, '#a0bd00',
-    2, '#14adb8'
-  ],
-    'circle-opacity': 0.8
-  },
-  filter: ['all', filterWeek, filterYear]
-    });
- 
-document.getElementById('slider').addEventListener('input', function(e) {
-var week = parseInt(e.target.value);
-filterWeek = ['==', ['number', ['get', 'Week_Num']], week]
-map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
-
-// update text in the UI
-document.getElementById('week-num').innerText = week;
-});
-
-document.getElementById('filters').addEventListener('change', function(e) {
-var year = parseInt(e.target.value);
-filterYear = ['==', ['number', ['get', 'Year']], year]
-
-map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
+  map.addLayer({
+    id: 'irvine_theft',
+    type: 'circle',
+    source: {
+    type: 'geojson',
+    data: './irvine_thefts_final.geojson'
+    },
+    paint: {'circle-color': [ 'step', ['get', 'Thefttype'],
+      '#ffffff',
+      0, '#a7023e',
+      1, '#a0bd00',
+      2, '#14adb8'
+    ],
+      'circle-opacity': 0.8
+    },
+    filter: ['all', filterWeek, filterYear]
+      });
   
+    document.getElementById('slider').addEventListener('input', function(e) {
+    var week = parseInt(e.target.value);
+    filterWeek = ['==', ['number', ['get', 'Week_Num']], week]
+    map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
 
-});
+    // update text in the UI
+    document.getElementById('week-num').innerText = week;
+    });
+
+    document.getElementById('filters').addEventListener('change', function(e) {
+    var year = parseInt(e.target.value);
+    filterYear = ['==', ['number', ['get', 'Year']], year]
+
+    map.setFilter('irvine_theft', ['all', filterWeek, filterYear]);
+      
+    });
+
+    // Displays theft info when clicked
+    map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['irvine_theft'] 
+    });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<p><strong>Date: </strong> ' + feature.properties.Date + '</p><p><strong>Type: </strong>' + feature.properties.Type + '</p>')
+        .addTo(map);
+    });
 });
 </script>
  
