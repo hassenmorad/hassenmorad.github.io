@@ -230,7 +230,7 @@ map.on('load', function() {
 
     var popup = new mapboxgl.Popup({ offset: [0, -15] })
         .setLngLat(feature.geometry.coordinates)
-        .setHTML('<p><strong>Date: </strong> ' + feature.properties.Date + '</p><p><strong>Type: </strong>' + feature.properties.Type + '</p>')
+        .setHTML('<p><strong>Date: </strong> ' + feature.properties.Date + '</p><p><strong>Type: </strong>' + feature.properties.Type + ' Theft</p>')
         .addTo(map);
     });
 });
