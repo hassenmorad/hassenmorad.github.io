@@ -149,7 +149,7 @@
         .setLngLat(e.lngLat)
         .setHTML('<h2>' + e.features[0].properties.City + ', ' + e.features[0].properties.State +
                   '<span class="notbold"> (' + e.features[0].properties.Zip_Code +')</span>' +  
-                  '</h2><p><strong>Population: </strong>' + e.features[0].properties.Population + 
+                  '</h2><p><strong>Population: </strong>' + e.features[0].properties.Population.toLocaleString() + 
                   '<br><strong>White: </strong>' + e.features[0].properties.White + '%' +
                   '<br><strong>Black: </strong>' + e.features[0].properties.Black + '%' +
                   '<br><strong>Latino</strong>: ' + e.features[0].properties.Latino + '%' +
