@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>US Race Demographics</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+      body {
+      margin: 0;
+      padding: 0;
+      }
+      
+      h1 {
+      margin: 5px;
+      font-size: 1.5em;
+      }
+      
+      h2,
+      h3 {
+      margin: 10px;
+      font-size: 1.2em;
+      }
+      
+      h3 {
+      font-size: 1em;
+      }
+      
+      p {
+      font-size: 1em;
+      margin: 10px;
+      text-align: left;
+      }
+      
+      /**
+      * Create a position for the map
+      * on the page */
+      #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      }
+
+      .mapboxgl-popup {
+      max-width: 400px;
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      }
+      
+      /**
+      * Set rules for how the map overlays
+      * (information box and legend) will be displayed
+      * on the page. */
+      .map-overlay {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.8);
+      margin-right: 20px;
+      font-family: Arial, sans-serif;
+      overflow: auto;
+      border-radius: 3px;
+      }
+        
+      #legend {
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      line-height: 18px;
+      height: 155px;
+      width: 140px;
+      bottom:40px;
+      right:15px;
+      }
+      
+      .legend-key {
+      display: inline-block;
+      border-radius: 20%;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      }
+
+      .notbold {
+      font-weight: normal;
+      }​
+
+      #map_title {
+      position: absolute;
+      top: 15px;
+      left:15px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      background: rgba(255, 254, 254, 0.8);
+        }
+
+      .legend-title {
+      margin: 5px 0px;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <div id='map'></div>
+    <div class='map-overlay' id='legend'></div>
+
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzc2VubW9yYWQiLCJhIjoiY2p5NmR4ejNhMDcyMjNmbzh5NzF4ODFmbCJ9.fZkFuUqq--PXmY_w7iCOdw';
+
+      var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/hassenmorad/ck1iiw1wc1i4h1dnh8hmdkk2b'
+      });
+
+      map.on('load', function() {
+          var layers = ['White', 'Black', 'Latino', 'Asian', 'Native American', 'Pacific Islander', 'Mixed'];
+          var colors = ['#0265b6', '#d2f202', '#eb5e00', '#eb0000', '#54009e', '#00e6ac', '#95e600'];
+
+      // Adds legend 
+      var legend_title = document.createElement('h3');
+      var legend_text = document.createTextNode('Race:');
+      legend_title.appendChild(legend_text);
+      legend_title.className = 'legend-title';
+      legend.appendChild(legend_title);
+
+      for (i = 0; i < layers.length; i++) {
+          var layer = layers[i];
+          var color = colors[i];
+          var item = document.createElement('div');
+          var key = document.createElement('span');
+          key.className = 'legend-key';
+          key.style.backgroundColor = color;
+      
+          var value = document.createElement('span');
+          value.innerHTML = layer;
+          item.appendChild(key);
+          item.appendChild(value);
+          legend.appendChild(item);
+      }
+
+      // Adds popup window
+      var popup = new mapboxgl.Popup({
+        closeButton: false
+      });
+
+      map.on('mousemove', 'Zips', function (e) {
+        popup
+        .setLngLat(e.lngLat)
+        .setHTML('<h2>' + e.features[0].properties.City + ', ' + e.features[0].properties.State +
+                  '<span class="notbold"> (' + e.features[0].properties.Zip_Code +')</span>' +  
+                  '</h2><p><strong>Population: </strong>' + e.features[0].properties.Population + 
+                  '<br><strong>White: </strong>' + e.features[0].properties.White + '%' +
+                  '<br><strong>Black: </strong>' + e.features[0].properties.Black + '%' +
+                  '<br><strong>Latino</strong>: ' + e.features[0].properties.Latino + '%' +
+                  '<br><strong>Asian: </strong>' + e.features[0].properties.Asian + '%' +
+                  '<br><strong>Native American: </strong>' + e.features[0].properties["Native_Ame"]  + '%' +
+                  '<br><strong>Pacific Islander: </strong>' + e.features[0].properties["Hawaiian_P"] + '%' +
+                  '<br><strong>Mixed Race: </strong>' + e.features[0].properties.Mixed_Race + '%</p>')
+        .addTo(map);
+        });
+
+      map.on('mouseleave', 'Zips', function() {
+      map.getCanvas().style.cursor = '';
+      popup.remove();
+      });
+     
+        });
+    </script>
+  </body>
+</html>

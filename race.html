@@ -1,171 +1,79 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset='utf-8' />
-    <title>US Race Demographics</title>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+	<head>
+			<title>Race Map</title>
+			<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-    <style>
-      body {
-      margin: 0;
-      padding: 0;
-      }
-      
-      h1 {
-      margin: 5px;
-      font-size: 1.5em;
-      }
-      
-      h2,
-      h3 {
-      margin: 10px;
-      font-size: 1.2em;
-      }
-      
-      h3 {
-      font-size: 1em;
-      }
-      
-      p {
-      font-size: 1em;
-      margin: 10px;
-      text-align: left;
-      }
-      
-      /**
-      * Create a position for the map
-      * on the page */
-      #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      }
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-      .mapboxgl-popup {
-      max-width: 400px;
-      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      }
-      
-      /**
-      * Set rules for how the map overlays
-      * (information box and legend) will be displayed
-      * on the page. */
-      .map-overlay {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      background: rgba(255, 255, 255, 0.8);
-      margin-right: 20px;
-      font-family: Arial, sans-serif;
-      overflow: auto;
-      border-radius: 3px;
-      }
-        
-      #legend {
-      padding: 10px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      line-height: 18px;
-      height: 155px;
-      width: 160px;
-      bottom:40px;
-      right:15px;
-      }
-      
-      .legend-key {
-      display: inline-block;
-      border-radius: 20%;
-      width: 10px;
-      height: 10px;
-      margin-right: 5px;
-      }
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
 
-      .notbold {
-      font-weight: normal;
-      }​
+							<!-- Content -->
+								<section>
+                  <h1><span class="normal">Mapping Race Demographics</span></h1>
+									<h2><span class="normal">Visual display of race demographics in all 33,000+ U.S. zip codes.<br>
+										<strong>*Explore Interactivity:</strong> Hover, Scroll</span></h2>
 
-      #map_title {
-      position: absolute;
-      top: 15px;
-      left:15px;
-      padding: 10px;
-      font-family: Arial, sans-serif;
-      background: rgba(255, 254, 254, 0.8);
-        }
+									<iframe src="race_map.html" width=100% height=600px></iframe>
 
-      .legend-title {
-      margin: 5px 0px;
-      }
+									<h2><span class="normal">Full project details can be found on <a href="https://github.com/hassenmorad/race-demographics" class="colored" target="blank">Github</em></a></span></h2>
+                  <h2>Notable Observations:</h2>
+                  <p><strong>(1) The effects of slavery are still clearly evident, with African Americans dominating the South. Interestingly, Whites outnumber them on the Gulf coastline. <a href="white_black.html">African American Map</a></strong></p>
+                  <p><strong>(2) While they make up less than 1% of the population, Native American presence is certainly visible in Arizona, New Mexico, Montana and the Dakotas. <a href="native_american.html">Native American Map</a></strong></p>
+                  <p><strong>(3) Oklahoma is home to a peculiarly high ratio of individuals identifying as "mixed race." I wonder if this is the result of different data collection methods since this pattern doesn't spill over into neighboring states, which would be expected if regional factors were at play. <a href="mixed.html">Mixed Race Map</a></strong></p>
+                  <p><strong>(4) Despite comprising <a href="https://en.wikipedia.org/wiki/Demographics_of_Asian_Americans#Population" target="blank">over 5%</a> of the U.S. population, Asian Americans are hardly noticeable on the map. In fact, they only represent a majority in 0.16% of all U.S. zip codes. Their presence is concentrated around a few major metropolises, including: San Francisco, Los Angeles, Houston, Chicago and New York. <a href="asian.html">Asian Map</a></strong></p>
+                  <p><strong>(5) Unsurprisingly, Latino presence is heavy in states sharing a border with Mexico. <a href="latino.html">Latino Map</a> </strong></p>
+									<hr class="major" />
+									<h2>U.S. Population (2017 Census)</h2>
+									<iframe title="" aria-label="Interactive donut chart" src="//datawrapper.dwcdn.net/wJKo0/4/" scrolling="no" frameborder="0" style="border: none;" width="806" height="477"></iframe>
+									<br><br><br>
+						</div>
+					</div>
 
-    </style>
-  </head>
-  
-  <body>
-    <div id='map'></div>
-    <div class='map-overlay' id='legend'></div>
+				<!-- Sidebar -->
+				<div id="sidebar">
+						<div class="inner">
 
-    <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzc2VubW9yYWQiLCJhIjoiY2p5NmR4ejNhMDcyMjNmbzh5NzF4ODFmbCJ9.fZkFuUqq--PXmY_w7iCOdw';
+							<!-- Menu -->
+							<nav id="menu">
+									<ul>
+										<br><br><br><br><br><br>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="portfolio.html">Portfolio</a></li>
+										<li><a href="tutorials.html">Tutorials</a></li>
+										<li><a href="resume.html">Resume</a></li>										
+									</ul>
+								</nav>
 
-      var map = new mapboxgl.Map({
-          container: 'map', // container id
-          style: 'mapbox://styles/hassenmorad/ck1iiw1wc1i4h1dnh8hmdkk2b'
-      });
+							<!-- Contact -->
+							<section>
+									<ul class="icons"><br>
+										<li><a href="https://www.linkedin.com/in/hassen-morad/" target="blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+										<li><a href="https://github.com/hassenmorad" target="blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+										<li><a href="https://medium.com/@hassen.morad" target="blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+									<p>hassen.morad@gmail.com</p>
+									
+								</section>
 
-      map.on('load', function() {
-          var layers = ['White', 'African American', 'Latino', 'Asian', 'Native American', 'Pacific Islander', 'Mixed'];
-          var colors = ['#027bde', '#def202', '#ff6c0a', '#de0202', '#8502f7', '#06fec0', '#95e600'];
+						</div>
+					</div>
 
-      // Adds legend 
-      var legend_title = document.createElement('h3');
-      var legend_text = document.createTextNode('Race:');
-      legend_title.appendChild(legend_text);
-      legend_title.className = 'legend-title';
-      legend.appendChild(legend_title);
+			</div>
 
-      for (i = 0; i < layers.length; i++) {
-          var layer = layers[i];
-          var color = colors[i];
-          var item = document.createElement('div');
-          var key = document.createElement('span');
-          key.className = 'legend-key';
-          key.style.backgroundColor = color;
-      
-          var value = document.createElement('span');
-          value.innerHTML = layer;
-          item.appendChild(key);
-          item.appendChild(value);
-          legend.appendChild(item);
-      }
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-      // Adds popup window
-      var popup = new mapboxgl.Popup({
-        closeButton: false
-      });
-
-      map.on('mousemove', 'Zips', function (e) {
-        popup
-        .setLngLat(e.lngLat)
-        .setHTML('<h2>' + e.features[0].properties.City + ', ' + e.features[0].properties.State +
-                  '<span class="notbold"> (' + e.features[0].properties.Zip_Code +')</span>' +  
-                  '</h2><p><strong>Population: </strong>' + e.features[0].properties.Population + 
-                  '<br><strong>White: </strong>' + e.features[0].properties.White + '%' +
-                  '<br><strong>Black: </strong>' + e.features[0].properties.Black + '%' +
-                  '<br><strong>Latino</strong>: ' + e.features[0].properties.Latino + '%' +
-                  '<br><strong>Asian: </strong>' + e.features[0].properties.Asian + '%' +
-                  '<br><strong>Native American: </strong>' + e.features[0].properties["Native_Ame"]  + '%' +
-                  '<br><strong>Pacific Islander: </strong>' + e.features[0].properties["Hawaiian_P"] + '%' +
-                  '<br><strong>Mixed Race: </strong>' + e.features[0].properties.Mixed_Race + '%</p>')
-        .addTo(map);
-        });
-
-      map.on('mouseleave', 'Zips', function() {
-      map.getCanvas().style.cursor = '';
-      popup.remove();
-      });
-     
-        });
-    </script>
-  </body>
+	</body>
 </html>
