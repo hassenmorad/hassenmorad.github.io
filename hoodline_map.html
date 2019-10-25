@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset='utf-8' />
-    <title>US Mixed Race Population</title>
+    <title>SF Weekly Crime Map</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
 
@@ -46,8 +46,9 @@
       .mapboxgl-popup {
       max-width: 400px;
       font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      opacity: .95;
+      opacity: 0.9;
       }
+      
       
       /**
       * Set rules for how the map overlays
@@ -69,7 +70,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
       line-height: 18px;
       height: 155px;
-      width: 160px;
+      width: 140px;
       bottom:40px;
       right:15px;
       }
@@ -110,27 +111,30 @@
 
       var map = new mapboxgl.Map({
           container: 'map', // container id
-          style: 'mapbox://styles/hassenmorad/ck1skw2tl58xy1cqnru7zbefr'
+          style: 'mapbox://styles/hassenmorad/ck23itxsz29yo1cmc20xncs75'
       });
 
       map.on('load', function() {
-        
+
       // Adds popup window
       var popup = new mapboxgl.Popup({
         closeButton: false
       });
 
-      map.on('mousemove', 'Zips', function (e) {
+      map.on('mousemove', 'Crimes', function (e) {
         popup
         .setLngLat(e.lngLat)
-        .setHTML('<h2>' + e.features[0].properties.City + ', ' + e.features[0].properties.State +
-                  '<span class="notbold"> (' + e.features[0].properties.Zip_Code +')</span>' +  
-                  '</h2><p><strong>Population: </strong>' + e.features[0].properties.Population.toLocaleString() + 
-                  '<br><strong>Asian: </strong>' + e.features[0].properties.Asian + '%</p>')
+        .setHTML('<h2>Top Crimes:</h2>' +
+          '<p><strong>' + e.features[0].properties.Offense1 + ':</strong> ' + e.features[0].properties.Count1 + 
+          '<br><strong>' + e.features[0].properties.Offense2 + ':</strong> ' + e.features[0].properties.Count2 + 
+          '<br><strong>' + e.features[0].properties.Offense3 + ':</strong> ' + e.features[0].properties.Count3 + 
+          '<br><strong>' + e.features[0].properties.Offense4 + ':</strong> ' + e.features[0].properties.Count4 + 
+          '<br><strong>' + e.features[0].properties.Offense5 + ':</strong> ' + e.features[0].properties.Count5 + 
+          '</p>')
         .addTo(map);
         });
 
-      map.on('mouseleave', 'Zips', function() {
+      map.on('mouseleave', 'Crimes', function() {
       map.getCanvas().style.cursor = '';
       popup.remove();
       });

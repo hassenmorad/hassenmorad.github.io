@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+			<title>Hoodline Visualizations</title>
+			<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Content -->
+								<section>
+                  <h1><span class="normal">Alternative Approach to Automated Visualizations</span></h1>
+									<h2>Recreating visualizations from this hoodline.com <a href="https://hoodline.com/2018/11/the-week-in-sf-crime-reports-overall-complaints-drop-harassment-calls-climb" target="blank" class="colored">news article</a></h2>
+                  <p><strong>Thought Process:</strong><br>
+                  As someone who appreciates the rapidly-expanding accessibility to all sorts of data about human behavior, the prospect of extending this access to the wider public greatly appeals to me. 
+                  A plethora of powerful open-source tools now allow us to efficiently mass produce dynamic and aesthetically-appealing data visualizations. So when I came across Hoodline's job description and viewed
+                  examples of news stories produced through their automation-centered approach, I was eager to share some thoughts on how to potentially present the data more effectively.</p>
+                  <p>I'll cover two visualizations from the article linked above, presenting the original, then my recreated version, followed by some notes on the changes I made. All the code related to this project can be found on <a href="https://github.com/hassenmorad/SF-Crime-Data" target="blank">Github</a>.</p>
+                  <h2>(1) Hoodline Article Bar Chart:</h2>
+                  <img src="images/hoodline_bar.png" class="image fit">
+                  <h2>Alternative Bar Chart:<br>
+                  <span class="normal">Note: this is crime data from Crimeometer's API. I'm not sure what the source of the original chart data is.</span></h2>
+                  <img src="images/San Francisco_top_weekly_crimes_11-11.png" class="image fit">
+                  <h3><span class="normal">*The code for creating this chart is easily automatable and can be found in this project's github repository.</span></h3>
+                  <br>
+                  <h3>Suggested Edits:</h3>
+                  <p>1. First, I'm assuming the original chart was created with matplotlib and the rationale for doing so was at least partly due to ease of automated mass production. Currently, many other visualization libraries 
+                    offer greater control over design elements while also being simple enough to automate. One such example is Altair, which is a pythonic grammar for the Vega-lite library. I used Altair in producing this recreation.<br><br>
+                    2. In terms of design choice, since the reader is expected to read crime category labels, a horizontal bar chart facilitates easier reading while maintaining the same effective representation of crime counts.<br><br>
+                    3. Perhaps reducing the total number of crimes included is worth considering to avoid information overload.<br><br>
+                    4. With regards to the labels, simple adjustments like capitalization would improve readability and generally looks more professional.<br><br>
+                    5. A visual element is needed to help the reader accurately grasp the raw counts of each crime category, whether it be horizontal lines (on the vertical bar chart) or embedding the actual counts at the end of each bar (as in my version).<br><br>
+                    6. Using color to highlight the most prevalent crime category is an effective means of emphasizing the most important data point.<br><br>
+                    7. Finally, aligning the chart title to the left side of the chart seems to be the conventional style in news visualizations.</p>
+                  <hr class="major" />
+
+                  <h2>(2) Hoodline Article Map:</h2>
+                  <img src="images/hoodline_map.png" class="image fit">
+                  <h2>Alternative Map:</h2>
+                  <iframe src="hoodline_map.html" width=100% height=600px></iframe>
+                  <br><br>
+                  <h3>Initial Thoughts:</h3>
+                  <p>Putting myself in the reader's shoes, a map of crime data should clearly answer the following two questions: <br><br>(1) What crimes are occuring in <em>my</em> neighborhood <br>(2) How prevalent are they? <br><br>
+                    The original map does a good job of using color to display the variety of crimes committed and also effectively indicates where crime is concentrated through point clustering. 
+                    I would suggest supplementing these macro indicators by allowing the reader to zoom in and effectively answer the most important question- what's going on in <em>my</em> neighborhood? 
+                    The overlapping of thousands of points in the original map makes this difficult to answer clearly.</p>
+                  <h3>Suggested Edits:</h3>
+                  <p class="pad">1. Instead of plotting all points, which would be more appropriate if the number of points was much smaller or if a clear geographical pattern was present, I would suggest binning the data.
+                    Essentially, this aggregates the data in each subsection of the city and represents crime concentration through color intensity. This is a more precise method of displaying crime concentration, addressesing the issue of points being hidden through overlap.
+                    It also avoids the issue of data being misrepresented (through the mixing of partially-opaque point colors) when overlap occurs.<br><br>
+                    2. One way to clearly communicate detailed crime data is by presenting crime stats in each hexagonal subsection through a pop up window. 
+                    I implemented this in my recreation to give an idea of how this adds greater insight.<br><br>
+                    3. Identifying landmarks through labels is useful for helping readers locate themselves on the map, but displaying black text over a dark blue background makes the labels a little difficult to read. 
+                    One solution is to utilize an interactive map that layers elements so that such overlap is avoided. This is how Mapbox works, adding or removing map data depending on how zoomed in/out the map is. 
+                    As you can see in my recreation, streets and landmarks are presented as appropriate without overcrowding the map (and this can be tinkered with further to include the desired level of detail).<br><br>
+                    4. Finally, providing the reader with an interactive map allows them to zoom in and explore the micro view of crime in their city, providing a much richer experience.
+
+									<hr class="major" /><br><br><br>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+							<nav id="menu">
+									<ul>
+										<br><br><br><br><br><br>
+										<li><a href="index.html">Home</a></li>
+										<li><a href="portfolio.html">Portfolio</a></li>
+										<li><a href="tutorials.html">Tutorials</a></li>
+										<li><a href="resume.html">Resume</a></li>										
+									</ul>
+								</nav>
+
+							<!-- Contact -->
+							<section>
+									<ul class="icons"><br>
+										<li><a href="https://www.linkedin.com/in/hassen-morad/" target="blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+										<li><a href="https://github.com/hassenmorad" target="blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+										<li><a href="https://medium.com/@hassen.morad" target="blank" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+									<p>hassen.morad@gmail.com</p>
+									
+								</section>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
