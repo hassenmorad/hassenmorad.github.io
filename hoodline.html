@@ -32,14 +32,14 @@
                   <h3><span class="normal">*The code for creating this chart is easily automatable and can be found in this project's github repository.</span></h3>
                   <br>
                   <h3>Suggested Edits:</h3>
-                  <p>1. First, I'm assuming the original chart was created with matplotlib and the rationale for doing so was at least partly due to ease of automated mass production. Currently, many other visualization libraries 
+                  <p>1. First, I'm assuming the original chart was created with matplotlib and the rationale for doing so was at least partly due to ease of automation. Currently, many other visualization libraries 
                     offer greater control over design elements while also being simple enough to automate. One such example is Altair, which is a pythonic grammar for the Vega-lite library. I used Altair in producing this recreation.<br><br>
-                    2. In terms of design choice, since the reader is expected to read crime category labels, a horizontal bar chart facilitates easier reading while maintaining the same effective representation of crime counts.<br><br>
-                    3. Perhaps reducing the total number of crimes included is worth considering to avoid information overload.<br><br>
+                    2. In terms of design choice, since the reader is expected to read crime category labels, a horizontal bar chart facilitates easier reading while maintaining the same effective visual representation of crime counts.<br><br>
+                    3. Perhaps reducing the total number of crimes included is worth considering to avoid information overload (I reduced the number from 15 to 12, but even a few more could be removed).<br><br>
                     4. With regards to the labels, simple adjustments like capitalization would improve readability and generally looks more professional.<br><br>
-                    5. A visual element is needed to help the reader accurately grasp the raw counts of each crime category, whether it be horizontal lines (on the vertical bar chart) or embedding the actual counts at the end of each bar (as in my version).<br><br>
-                    6. Using color to highlight the most prevalent crime category is an effective means of emphasizing the most important data point.<br><br>
-                    7. Finally, aligning the chart title to the left side of the chart seems to be the conventional style in news visualizations.</p>
+                    5. A visual guide is needed to link bar sizes to raw crime counts. In a vertical bar chart this could be horizontal lines. Another option is to embed the actual counts at the end of each bar (as in the recreated chart).<br><br>
+                    6. Using color to highlight the top crime category is an effective means of emphasizing the most important data point.<br><br>
+                    7. Finally, aligning the chart title to the left side seems to be the conventional style in news visualizations.</p>
                   <hr class="major" />
 
                   <h2>(2) Hoodline Article Map:</h2>
@@ -50,18 +50,18 @@
                   <h3>Initial Thoughts:</h3>
                   <p>Putting myself in the reader's shoes, a map of crime data should clearly answer the following two questions: <br><br>(1) What crimes are occuring in <em>my</em> neighborhood <br>(2) How prevalent are they? <br><br>
                     The original map does a good job of using color to display the variety of crimes committed and also effectively indicates where crime is concentrated through point clustering. 
-                    I would suggest supplementing these macro indicators by allowing the reader to zoom in and effectively answer the most important question- what's going on in <em>my</em> neighborhood? 
+                    I would suggest supplementing these macro indicators by allowing the reader to zoom in and explore the data on the micro level.
                     The overlapping of thousands of points in the original map makes this difficult to answer clearly.</p>
                   <h3>Suggested Edits:</h3>
                   <p class="pad">1. Instead of plotting all points, which would be more appropriate if the number of points was much smaller or if a clear geographical pattern was present, I would suggest binning the data.
-                    Essentially, this aggregates the data in each subsection of the city and represents crime concentration through color intensity. This is a more precise method of displaying crime concentration, addressesing the issue of points being hidden through overlap.
+                    Essentially, this aggregates the data in each subsection of the city and represents crime concentration through color intensity. This is a more precise method of displaying crime concentration, since points can potentially be hidden if they overlap.
                     It also avoids the issue of data being misrepresented (through the mixing of partially-opaque point colors) when overlap occurs.<br><br>
-                    2. One way to clearly communicate detailed crime data is by presenting crime stats in each hexagonal subsection through a pop up window. 
+                    2. One way to clearly communicate detailed crime data is present crime stats in each hexagonal subsection through a pop up window. 
                     I implemented this in my recreation to give an idea of how this adds greater insight.<br><br>
                     3. Identifying landmarks through labels is useful for helping readers locate themselves on the map, but displaying black text over a dark blue background makes the labels a little difficult to read. 
-                    One solution is to utilize an interactive map that layers elements so that such overlap is avoided. This is how Mapbox works, adding or removing map data depending on how zoomed in/out the map is. 
+                    One solution is to utilize an interactive map that layers elements and avoids overlap. This is how Mapbox works, adding or removing labels depending on how zoomed in/out the map is. 
                     As you can see in my recreation, streets and landmarks are presented as appropriate without overcrowding the map (and this can be tinkered with further to include the desired level of detail).<br><br>
-                    4. Finally, providing the reader with an interactive map allows them to zoom in and explore the micro view of crime in their city, providing a much richer experience.
+                    *An interactive map allows the reader to zoom in and explore the micro view of crime in their city, providing a much richer experience.
 
 									<hr class="major" /><br><br><br>
 						</div>
