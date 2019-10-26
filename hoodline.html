@@ -54,14 +54,15 @@
                     The overlapping of thousands of points in the original map makes this difficult to answer clearly.</p>
                   <h3>Suggested Edits:</h3>
                   <p class="pad">1. Instead of plotting all points, which would be more appropriate if the number of points was much smaller or if a clear geographical pattern was present, I would suggest binning the data.
-                    Essentially, this aggregates the data in each subsection of the city and represents crime concentration through color intensity. This is a more precise method of displaying crime concentration, since points can potentially be hidden if they overlap.
+										This aggregates the data in each subsection of the city and represents crime concentration through color intensity. 
+										Binning is a more precise method of displaying crime concentration, since individual points can potentially become hidden if they overlap.
                     It also avoids the issue of data being misrepresented (through the mixing of partially-opaque point colors) when overlap occurs.<br><br>
-                    2. One way to clearly communicate detailed crime data is present crime stats in each hexagonal subsection through a pop up window. 
-                    I implemented this in my recreation to give an idea of how this adds greater insight.<br><br>
+                    2. One way to clearly communicate detailed crime data is to present mini summaries of crime stats in each hexagonal subsection. 
+                    I implemented this through a pop up window in my recreation. This a more effective means of providing insight on the micro level than plotting individual points with a color key.<br><br>
                     3. Identifying landmarks through labels is useful for helping readers locate themselves on the map, but displaying black text over a dark blue background makes the labels a little difficult to read. 
-                    One solution is to utilize an interactive map that layers elements and avoids overlap. This is how Mapbox works, adding or removing labels depending on how zoomed in/out the map is. 
-                    As you can see in my recreation, streets and landmarks are presented as appropriate without overcrowding the map (and this can be tinkered with further to include the desired level of detail).<br><br>
-                    *An interactive map allows the reader to zoom in and explore the micro view of crime in their city, providing a much richer experience.
+                    One solution is to utilize an interactive map that layers elements and avoids overlap, which is standard in Mapbox. Labels are added or removed depending on the map zoom level. 
+                    As you can see in my recreation, particular streets and landmarks are presented as appropriate without overcrowding the map (this can be tinkered with further to include the desired level of detail).<br><br>
+                    *It seems straightforward to me that an interactive map allows the reader to zoom in and explore the micro view of crime in their city, providing a much richer experience.
 
 									<hr class="major" /><br><br><br>
 						</div>
