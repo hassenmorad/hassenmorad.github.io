@@ -51,14 +51,19 @@
                   <p>Putting myself in the reader's shoes, a map of crime data should clearly answer the following two questions: <br><br>(1) What crimes are occuring in <em>my</em> neighborhood <br>(2) How prevalent are they? <br><br>
                     The original map does a good job of using color to display the variety of crimes committed and also effectively indicates where crime is concentrated through point clustering. 
                     I would suggest supplementing these macro indicators by allowing the reader to zoom in and explore the data on the micro level.
-                    The overlapping of thousands of points in the original map makes this difficult to answer clearly.</p>
+										The overlapping of thousands of points in the original map makes this difficult to answer clearly. 
+										This approach might be the right choice in the following scenarios:<br><br> 
+										- Only one category of crime was being plotted<br><br> 
+										- The number of points was much smaller (e.g. < 50)<br><br> 
+										- If a clear geographical pattern was present (i.e. colors were segregated in different areas)</p>
                   <h3>Suggested Edits:</h3>
-                  <p class="pad">1. Instead of plotting all points, which would be more appropriate if the number of points was much smaller or if a clear geographical pattern was present, I would suggest binning the data.
-										This aggregates the data in each subsection of the city and represents crime concentration through color intensity. 
-										Binning is a more precise method of displaying crime concentration, since individual points can potentially become hidden if they overlap.
-                    It also avoids the issue of data being misrepresented (through the mixing of partially-opaque point colors) when overlap occurs.<br><br>
+                  <p class="pad">1. Instead of plotting all points, I would suggest aggregating the data in each subsection of the city through binning.  
+										This is a more precise method of displaying crime concentration, since individual points can potentially become hidden if they overlap.
+                    It also avoids the issue of data being misrepresented (through the mixing of partially-opaque point colors) if overlap occurs (e.g. overlapping blue and yellow dots appear as one green dot).<br><br>
                     2. One way to clearly communicate detailed crime data is to present mini summaries of crime stats in each hexagonal subsection. 
-                    I implemented this through a pop up window in my recreation. This a more effective means of providing insight on the micro level than plotting individual points with a color key.<br><br>
+										I implemented this through a pop up window in my recreation. 
+										This a more effective means of providing insight on micro level stats to the reader than providing them with a color key and having them manually process so many individual points.
+										I suspect most would observe the predominance of blue dots (suspicious activity) and not bother with the rest of the data points.<br><br>
                     3. Identifying landmarks through labels is useful for helping readers locate themselves on the map, but displaying black text over a dark blue background makes the labels a little difficult to read. 
                     One solution is to utilize an interactive map that layers elements and avoids overlap, which is standard in Mapbox. Labels are added or removed depending on the map zoom level. 
                     As you can see in my recreation, particular streets and landmarks are presented as appropriate without overcrowding the map (this can be tinkered with further to include the desired level of detail).<br><br>
