@@ -48,27 +48,28 @@
                   <iframe src="hoodline_map.html" width=100% height=600px></iframe>
                   <br><br>
                   <h3>Initial Thoughts:</h3>
-									<p>Putting myself in the reader's shoes, a map of crime data should clearly communicate both macro and micro level insight on where crime is occurring and how prevalent it is.:<br><br>
-                    The original map does a pretty good job communicating the macro level insights, using color to display the variety of crimes committed and indicating crime hotspots through point clustering. 
-                    I would suggest supplementing these macro indicators by allowing the reader to zoom in and explore micro level detail, which is probably much more personal and meaningful (e.g. what crimes are occurring in <em>my</em> neighborhood?).
+									<p>Putting myself in the reader's shoes, a map of crime data should clearly communicate both macro <em>and</em> micro level insight addressing the following questions:<br><br>
+										- Where is crime occurring?<br>
+										- How prevalent is it (generally, and by specific type)?<br><br>
+                    The original map does a decent job addressing the macro, using color to display crime variety and point clustering to indicate crime hotspots. 
+                    I would suggest also allowing the reader to zoom in and explore micro level detail, which is probably much more personal and meaningful (e.g. what crimes are occurring in <em>my</em> neighborhood?).
 										The overlapping of thousands of points in the original map makes this difficult to answer clearly, though it might be appropriate in the following scenarios:<br><br> 
-										- Only one category of crime was being plotted<br><br> 
-										- The number of points was much smaller (e.g. < 50)<br><br> 
+										- Only one category of crime was being plotted<br>
+										- The number of points was much smaller (e.g. < 50)<br> 
 										- A clear geographical pattern was present (i.e. colors were segregated in different areas)</p>
                   <h3>Suggested Edits:</h3>
                   <p class="pad">1. Instead of plotting all points, I would suggest aggregating the data in each subsection of the city through binning.  
 										This is a more precise method of displaying crime concentration, since individual points can potentially become hidden if they overlap.
-                    It also avoids the issue of data being misrepresented (through the mixing of partially-opaque point colors) if overlap occurs (e.g. overlapping blue and yellow dots appear as one green dot).<br><br>
+                    It also avoids the issue of data misrepresentation when partially-opaque points overlap (e.g. overlapping blue and yellow dots appear as one green dot).<br><br>
                     2. One way to clearly present crime data on the micro level is to provide mini summaries of crime stats in each hexagonal subsection. 
 										I implemented this through a pop up window in my recreation. 
-										This is in contrast to original map, which provides readers with a color key and essentially tasks them with visually processing several thousand points.
+										This is in contrast to original map, which provides readers with a color key and essentially tasks them with visually processing several thousand points to derive meaninful findings.
 										I suspect most would observe the predominance of blue dots (indicating suspicious activity) and not bother with the rest of the data points.
-										Binning the data and providing pop up stats is a more effective means of enabling readers to derive micro level insight.
-										.<br><br>
+										Binning the data and providing pop up stats is a more effective means of communicating micro stats (what crimes are occurring in what amounts in each part of the city).<br><br>
                     3. Identifying landmarks through labels is useful for helping readers locate themselves on the map, but displaying black text over a dark blue background makes the labels a little difficult to read. 
                     One solution is to utilize an interactive map that layers elements and avoids overlap, which is standard in Mapbox. Labels are added or removed depending on the map zoom level. 
                     As you can see in my recreation, particular streets and landmarks are presented as appropriate without overcrowding the map (this can be tinkered with further to include the desired level of detail).<br><br>
-                    *It seems straightforward to me that an interactive map allows the reader to zoom in and explore the micro view of crime in their city, providing a much richer experience.
+                    *It seems straightforward to me that an interactive map engages the reader more, allowing them to zoom in and explore the micro view of crime in their city, and provides a much richer overall experience.
 
 									<hr class="major" /><br><br><br>
 						</div>
