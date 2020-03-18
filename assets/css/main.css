@@ -13,7 +13,7 @@
 
 .normal {
 	font-weight: normal;
-	font-size: 70%;
+	font-size: 85%;
 }
 
 html, body, div, span, applet, object,
@@ -32,6 +32,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	font-family: lato;
 	vertical-align: baseline;
   text-align: justify;
   text-justify: inter-word;}
@@ -188,11 +189,13 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
+		font-size: 1.3em;
+		font-family: "calibri";
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3d4449;
-		font-family: "Roboto Slab", serif;
+		font-family: "Lato"; /*Original: "Roboto Slab", serif*/
 		font-weight: 700;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
@@ -211,15 +214,15 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.75em;
+		font-size: 2em;
 	}
 
 	h3 {
-		font-size: 1.25em;
+		font-size: 1.5em;
 	}
 
 	h4 {
-		font-size: 1.1em;
+		font-size: 1.2em;
 	}
 
 	h5 {
@@ -2156,16 +2159,20 @@ input, select, textarea {
 
 		ol li {
 			padding-left: 0.25em;
+			font-size: 1.3em;
+			font-family: "calibri";
 		}
 
 	ul {
-		list-style: disc;
+		list-style: "-"; /*previously: "disk" */
 		margin: 0 0 2em 0;
 		padding-left: 1em;
 	}
 
 		ul li {
 			padding-left: 0.5em;
+			font-size: 1.3em;
+			font-family: "calibri";
 		}
 
 		ul.alt {
