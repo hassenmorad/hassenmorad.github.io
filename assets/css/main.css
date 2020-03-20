@@ -32,7 +32,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	font-family: lato;
+	font-family: calibri;
 	vertical-align: baseline;
   text-align: justify;
   text-justify: inter-word;}
@@ -195,7 +195,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3d4449;
-		font-family: "Lato"; /*Original: "Roboto Slab", serif*/
+		font-family: "Calibri"; /*Original: "Roboto Slab", serif*/
 		font-weight: 700;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
