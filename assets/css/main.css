@@ -16,6 +16,11 @@
 	font-size: 85%;
 }
 
+.normalv2 {
+	font-weight: normal;
+	font-size: 65%;
+}
+
 .splitscreen {
 	display:flex;
 }
