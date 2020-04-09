@@ -21,9 +21,10 @@
 }
 .splitscreen .left {
 	flex: 1;
+	margin-right: 25px;
 }
 .splitscreen .right {
-	flex: .8;
+	flex: .6;
 }
 
 html, body, div, span, applet, object,
