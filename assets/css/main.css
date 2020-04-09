@@ -16,6 +16,16 @@
 	font-size: 85%;
 }
 
+.splitscreen {
+	display:flex;
+}
+.splitscreen .left {
+	flex: 1;
+}
+.splitscreen .right {
+	flex: 1;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -32,7 +42,7 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	font-family: calibri;
+	font-family: lato, calibri, arial;
 	vertical-align: baseline;
   text-align: justify;
   text-justify: inter-word;}
