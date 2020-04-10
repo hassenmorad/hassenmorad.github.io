@@ -21,6 +21,10 @@
 	font-size: 65%;
 }
 
+.no_margin {
+	margin:0;
+}
+
 .splitscreen {
 	display:flex;
 }
