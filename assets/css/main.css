@@ -28,12 +28,19 @@
 .splitscreen {
 	display:flex;
 }
-.splitscreen .left {
+.splitscreen .left1 {
 	flex: 1;
 	margin-right: 45px;
 }
-.splitscreen .right {
-	flex: .5;
+.splitscreen .left2 {
+	flex: 2;
+	margin-right: 45px;
+}
+.splitscreen .right1 {
+	flex: 1;
+}
+.splitscreen .right2 {
+	flex: 2;
 }
 
 html, body, div, span, applet, object,
