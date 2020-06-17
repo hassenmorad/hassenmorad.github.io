@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-			<title>LA County Migration</title>
+			<title>California Migration</title>
 			<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,23 +23,31 @@
 									<h2><span class="normal"><i>This is the third in a series of articles examining issues related to housing affordability.</i></span></h2>
 									<br>
 									<img src="images/leavingla1.png" class="image fit"><br>
-									<p>Only used domestic migration (excluded int'l migration- into and out of the US). Details can be found in this project's <a href='https://github.com/hassenmorad/CA-Migration' target='blank'>Github repository</a>.</p>
+									<p>Only used domestic migration (excluded int'l migration- into and out of the US). Details can be found in this project's <a href='https://github.com/hassenmorad/CA-Migration' target='blank'>Github repository</a>.
+									<br> Combined different data sources to expand data reach: Most recent 1-yr Census migration estimates where possible, otherwise most recent 5-yr estimates; 
+									combined IRS w/ Census.
+									</p>
 
 									<hr>
 									<p>
-										Qs:
-									- *Are* they leaving?
-									- Where are they going?
-									- Are home prices the culprit? (are [relative] CA home prices increasing- esp. compared to states/counties where they moved?)
-									- 
+										Questions Explored:
+									<br>- Are Californians really leaving?
+									<br>- If so, where are they going?
+									<br>- If so, what are the primary culprits? (are [relative] CA home prices increasing- esp. compared to states/counties where they moved?)
 									</p>
-									<p><b>Analysis Summary:</b> In order to track domestic migration in and out of California, I examined migration data from the 
+
+									<p><b>Analysis Approach:</b>
+										In order to track domestic migration in and out of California, I examined migration data from the 
 										<a href='https://www.census.gov/data/tables/time-series/demo/geographic-mobility/state-to-state-migration.html', target="blank">Census</a> and 
-										<a href='https://www.irs.gov/statistics/soi-tax-stats-migration-data', target="blank">IRS</a> spanning 1991-2018.
-										The narrative that California perpetually experiences greater outflow of residents than arrivals from other states is firmly supported by the data, as illustrated in the charts below. 
-										Although negative net migration is a consistent trend, the severity of it appears to ebb and flow, ranging from about -50,000 to -430,000 migrants annually. 
+										<a href='https://www.irs.gov/statistics/soi-tax-stats-migration-data', target="blank">IRS</a> spanning 1991-2018.</p>
+										
+									<p><b>Summary of Findings:</b> 
+										The narrative that California perpetually experiences greater outflow of residents than arrivals from other states is firmly supported by the data, 
+										as illustrated in the charts and maps below. 
+										Although negative net migration is a consistent trend, it appears to ebb and flow, ranging from about -50,000 to -430,000 migrants annually. 
 										Three spikes of out-migration appear during this period, with their peaks occurring in 1994 and 2005, as well as the one currently forming. 
 										</p>
+
 									<div class="splitscreen">
 										<div class="left1">
 											<img src="images/CA_in_out_mig_9118.svg" width=450>
@@ -55,21 +63,38 @@
 										</p>
 									<br><br>
 
+									<h3>1) Comparing Mortgage Expense:</h3>
+									<div class="splitscreen">
+										<div class="left1">
+											<img src="images/top50_CA_net_inmig_outmig_mort.svg" height=450>
+											<h4><span class="normal">
+												<i>*Note: circle sizes represent net migration figures</i>
+											</span></h4>
+										</div>
+
+										<div class="right1">
+											<img src="images/mort_dist_in_out.svg" height=450>
+											<h4><span class="normal">
+												<i>*Layered histograms of top 50 net inmigration and outmigration counties</i>
+											</span></h4>
+										</div>
+									</div>
+
+									<p>Text</p>
+
 									<p><b><i>The maps below are interactive- hold ctrl and scroll to zoom and hover over states to view migration data.</i></b></p>
 
 
+									<h2>Where Did Outbound Californians Move To?</h2>
 
 									<div class="splitscreen">
 										<div class="left2">
-											<h2>Where Did Outbound Californians Move To?
-												<br><span class="normalv2"><i>Unsurprisingly, they moved primarily to states in close proximity to CA- with the exception of Texas.</i></span>
-											</h2>
+											<br><br><br>
 											<iframe title="" aria-label="Map" id="datawrapper-chart-1SH2N" src="https://datawrapper.dwcdn.net/1SH2N/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="451"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
-								
+										
 										<div class="right1">
-											<br><br>
 											<h3 class='no_margin'>Top 10 Destination States</h3>
 											<iframe title="" aria-label="chart" id="datawrapper-chart-9sMZ5" src="https://datawrapper.dwcdn.net/9sMZ5/8/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
@@ -77,12 +102,11 @@
 									</div>
 									
 									<hr>
-									<h2>Top Destinations of Outmigrating Californians
-										<br><span class="normalv2"><i>Top 100 counties that Californians moved to (2013-2017)</i></span>
-									</h2>
+									<h2>Top Destinations of Outmigrating Californians</h2>
 									<div class="splitscreen">
 										
 										<div class="left2">
+											<h3 class='no_margin'>Top 100 Destination Counties</h3>
 											<iframe title="" aria-label="USA states Symbol map" id="datawrapper-chart-QSCRM" src="//datawrapper.dwcdn.net/QSCRM/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
 											</script>
 										</div>
@@ -97,7 +121,7 @@
 									<h2>California Net Migration</h2>
 									<div class="splitscreen">
 										<div class="left2">
-											<iframe title="" aria-label="Map" id="datawrapper-chart-ki5Gh" src="https://datawrapper.dwcdn.net/ki5Gh/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+											<iframe title="" aria-label="map" id="datawrapper-chart-ki5Gh" src="https://datawrapper.dwcdn.net/ki5Gh/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
 								
@@ -113,7 +137,7 @@
 									</h2>
 									<div class="splitscreen">
 										<div class="left2">
-											<iframe title="" aria-label="USA states Symbol map" id="datawrapper-chart-gAGGX" src="//datawrapper.dwcdn.net/gAGGX/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+											<iframe title="" aria-label="map" id="datawrapper-chart-gAGGX" src="https://datawrapper.dwcdn.net/gAGGX/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
 								
@@ -143,7 +167,7 @@
 									<h2>LA County Net Migration (CA counties)</h2>
 									<div class="splitscreen">
 										<div class="left2">
-											<iframe title="" aria-label="choropleth map" id="datawrapper-chart-gKCHO" src="//datawrapper.dwcdn.net/gKCHO/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
+											<iframe title="" aria-label="map" id="datawrapper-chart-gKCHO" src="https://datawrapper.dwcdn.net/gKCHO/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
 								
