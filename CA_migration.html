@@ -20,9 +20,12 @@
 								<section>
 									<br>
                   <h1><span class="normal">Are Rising Home Prices Forcing Californians Out?</span></h1>
-									<h2><span class="normal"><i>This is the third in a series of articles examining issues related to housing affordability.</i></span></h2>
+									<h2><span class="normal"><i>This is the second in a series of articles examining issues related to housing affordability.</i></span></h2>
 									<br>
-									<img src="images/leavingla1.jpg" class="image fit"><br>
+									<img src="images/leavingla1.jpg" class="image fit">
+									<br>
+									<h4><i>Jul 6, 2020</i></h4>
+									
 									<p>Only used domestic migration (excluded int'l migration- into and out of the US). Details can be found in this project's <a href='https://github.com/hassenmorad/CA-Migration' target='blank'>Github repository</a>.
 									<br> Combined different data sources to expand data reach: Most recent 1-yr Census migration estimates where possible, otherwise most recent 5-yr estimates; 
 									combined IRS w/ Census.
@@ -30,91 +33,88 @@
 
 									<hr>
 									<p>
+										Why focusing on housing & income (b/c articles attribute causation to the w/o sufficient data to support- unsubstantiated claims)
+									</p>
+									<p>
 										Questions Explored:
 									<br>- Are Californians really leaving?
 									<br>- If so, where are they going?
-									<br>- If so, what are the primary culprits? (are [relative] CA home prices increasing- esp. compared to states/counties where they moved?)
+									<br>- If so, do rising housing costs or stagnant/decreasing incomes play a significant role? (are [relative] CA home prices increasing- esp. compared to states/counties where they moved?)
 									</p>
 
 									<p><b>Analysis Approach:</b>
 										In order to track domestic migration in and out of California, I examined migration data from the 
 										<a href='https://www.census.gov/data/tables/time-series/demo/geographic-mobility/state-to-state-migration.html', target="blank">Census</a> and 
-										<a href='https://www.irs.gov/statistics/soi-tax-stats-migration-data', target="blank">IRS</a> spanning 1991-2018.</p>
+										<a href='https://www.irs.gov/statistics/soi-tax-stats-migration-data', target="blank">IRS</a> spanning 1991-2018.
+										It should be noted that the data below encompasses only interstate migration and excludes international migration data due to it being unreliable and/or incomplete.
+										Furthermore, note that migration data does not factor in population change caused by births, deaths, or other causes; 
+										therefore, it's possible for a state to experience net negative domestic (US) migration and overall population growth simultaneously (as is the case in California).
+									</p>
 										
+									<h2> Are Californians Really Leaving?</h2>
 									<p><b>Summary of Findings:</b> 
-										The narrative that California perpetually experiences greater outflow of residents than arrivals from other states is firmly supported by the data, 
-										as illustrated in the charts and maps below. 
-										Although negative net migration is a consistent trend, it appears to ebb and flow, ranging from about -50,000 to -430,000 migrants annually. 
-										Three spikes of out-migration appear during this period, with their peaks occurring in 1994 and 2005, as well as the one currently forming. 
-										</p>
+									Yes, the narrative that California perpetually experiences greater outflow of residents than arrivals from other states is firmly supported by the data, 
+									as illustrated in the net migration chart below (left). 
+									Although negative net migration is a consistent trend, it appears to ebb and flow, ranging from about -50,000 to -430,000 migrants annually from 1991-2018. 
+									Three spikes of out-migration appear during this period, with their peaks occurring in 1994 and 2005, as well as the one currently forming. 
+									These peaks may provide clues about the underlying causes of migration, which I will investigate below.
+									</p>
 
 									<div class="splitscreen">
 										<div class="left1">
-											<img src="images/CA_in_out_mig_9118.svg" width=450>
+											<img src="images/CA_net_mig_9118.svg" width=450>
 										</div>
 
 										<div class="right1">
-											<img src="images/CA_net_mig_9118.svg" width=450>
+											<img src="images/CA_in_out_mig_9118.svg" width=450>
 										</div>
 									</div>
 								
-										<p>
-											In my analysis below, I attempt to distill the factors causing increased out-migration by comparing housing and income data of destination counties in peak years versus non-peak years and identifying relevant patterns.
+									<p>
+										The chart on the right reveals an inverse relationship between migration into and out of California; 
+										in other words, less people move in during years where Californians move out in greater numbers (and vice versa).
+										This pattern suggests that the same living conditions that caused CA residents to move elsewhere likely also discouraged migration into the state. 
+										In my analysis below, I attempt to identify the degree to which <b><i>housing cost</i></b> and <b><i>income</i></b> play a role in migration by exploring the following comparisons:
+										<br>
+										<ol>
+											<li>Comparing California housing and income data in peak years versus non-peak years (other data correlated- e.g. house prices, HIR, etc.?)</li>
+											<li>Comparing housing and income data for the top 50 net in-migration counties against the top 50 net out-migration counties (most recent [13-17] or all years?)
+												<br id='net_def'>*Note: <b><i>net in-migration</i></b> counties are those where the number of residents from that county who moved to California was greater than the number of Californians who moved to that county; <b><i>net out-migration</i></b> counties reflect the opposite migration pattern.
+											</li>
+										</ol>
 										</p>
-									<br><br>
-
-									<h3>1) Comparing Housing Expenses:</h3>
-									<div class="splitscreen">
-										<div class="left1">
-											<img src="images/top50_CA_net_inmig_outmig_mort.svg" height=450>
-											<h4><span class="normal">
-												<i>*Note: circle sizes represent net migration figures</i>
-											</span></h4>
-										</div>
-
-										<div class="right1">
-											<img src="images/top50_CA_net_inmig_outmig_rent.svg" height=450>
-										</div>
-									</div>
-
+										
+										<p>
+											While causation is difficult to prove, if housing or income conditions have an impact on migration trends then clear correlations should be evident in the data.
+											However, before digging into the factors behind California's consistent outflow of residents, I will first highlight a few key findings about California's migration patterns.
+										</p>
 									<br>
-									
-									<div class="splitscreen">
-										<div class="left1">
-											<img src="images/mort_dist_in_out.svg" height=450>
-											<h4><span class="normal">
-												<i>*Layered histograms of top 50 net inmigration and outmigration counties</i>
-											</span></h4>
-										</div>
 
-										<div class="right1">
-											<img src="images/rent_dist_in_out.svg" height=450>
-										</div>
-									</div>
-
-									<p>Text</p>
-
-									<p><b><i>The maps below are interactive- hold ctrl and scroll to zoom and hover over states to view migration data.</i></b></p>
-
-
-									<h2>Where Did Outbound Californians Move To?</h2>
-
+									<h2>Where Did Outbound Californians Move To in 2018?
+										<br><span class="normalv2"><i>*Note: all maps are interactive (scroll over states for migration details).</i></span></h2>
 									<div class="splitscreen">
 										<div class="left2">
-											<br><br><br>
+											<h2>
+												<br>
 											<iframe title="" aria-label="Map" id="datawrapper-chart-1SH2N" src="https://datawrapper.dwcdn.net/1SH2N/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="451"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
 										
 										<div class="right1">
-											<h3 class='no_margin'>Top 10 Destination States</h3>
-											<iframe title="" aria-label="chart" id="datawrapper-chart-9sMZ5" src="https://datawrapper.dwcdn.net/9sMZ5/8/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+											<h3 class='no_margin'>Top 10 Destination States (2018)</h3>
+											<iframe title="" aria-label="chart" id="datawrapper-chart-9sMZ5" src="https://datawrapper.dwcdn.net/9sMZ5/9/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
 									</div>
+
+									<p>
+										Unsurprisingly, West Coast states received many of California's out-migrators, though the clear top destination was Texas. 
+										This list of states remained relatively unchanged from 1991-2018 with the top seven states from 2018 appearing in the top ten every year during this period.
+									</p>
 									
 									<hr>
-									<h2>Top Destinations of Outmigrating Californians</h2>
+									<!--
+										<h2>Top Destinations of Outmigrating Californians</h2>
 									<div class="splitscreen">
 										
 										<div class="left2">
@@ -130,37 +130,58 @@
 									</div>
 
 									<hr>
-									<h2>California Net Migration</h2>
-									<div class="splitscreen">
-										<div class="left2">
-											<iframe title="" aria-label="map" id="datawrapper-chart-ki5Gh" src="https://datawrapper.dwcdn.net/ki5Gh/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
-											</script>
-										</div>
-								
-										<div class="right1">
-											<br><br><br>
-											<p>text<br>text<br>text<br>text</p>
-										</div>
-									</div>
-
-									<hr>
-									<h2>CA Top 50 Net In/Out Migration Counties
-										<br><span class="normalv2"><i>Top 50 net inmigrating and outmigrating counties (2013-2017)</i></span>
+									-->
+									<h2 id='state_netmig'>California Net Migration - States (2018)
+										<br><span class="normalv2"><i>*Blue states = more CA residents moved there than residents of those states moved to CA (and vice versa for orange states).</i></span>
 									</h2>
 									<div class="splitscreen">
 										<div class="left2">
-											<iframe title="" aria-label="map" id="datawrapper-chart-gAGGX" src="https://datawrapper.dwcdn.net/gAGGX/7/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+											<iframe title="" aria-label="map" id="datawrapper-chart-ki5Gh" src="https://datawrapper.dwcdn.net/ki5Gh/6/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="450"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
 											</script>
 										</div>
 								
 										<div class="right1">
-											<br><br><br>
-											<p>text<br>text<br>text<br>text</p>
+											<p>
+												Mapping net migration reveals some interesting geographical patterns. 
+												In most years, states west of the Mississippi tend to be net receivers of residents while states in the Great Lakes and Northeast regions tend to be net senders of residents.
+												Identifying the reasons behind this pattern requires a more granular view of the data, which the county migration map below presents.
+												It should be noted that figures vary somewhat from year to year. Changes in net migration over time (state & county level) can be viewed <a href="migration_gifs.html" class="colored">here</a>.
+												<!--
+												further investigation, though I would look into the following questions:
+												(1) is California a more affordable state to reside in than parts of the Northeast?;
+												(2) is new housing less available in the Northeast than in California?
+												-->
+											</p>
 										</div>
 									</div>
 
 									<hr>
-									<h2>LA County Net Migration (Nationally)
+									<h2>California Net Migration - Counties (2013-2017)
+										<br><span class="normalv2"><i>Top 50 net CA in-migration and out-migration counties</i></span>
+									</h2>
+									<div class="splitscreen">
+										<div class="left2">
+											<iframe title="" aria-label="map" id="datawrapper-chart-gAGGX" src="https://datawrapper.dwcdn.net/gAGGX/11/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="414"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
+											</script>
+											<h4><span class="normal">
+												<i>*Note: the map above is interactive- hold ctrl and scroll to zoom and hover over states to view migration data.</i>
+											</span></h4>
+										</div>
+								
+										<div class="right1">
+											<p>
+												Despite county-to-county migration data only being available as five year estimates (the most recent of which represents 2013-2017), 
+												the same geographical pattern from the 2018 state map above is present on the county level but with greater insight. 
+												For example, it's clear that certain counties affect a state's net migration figures more than others. 
+												Another interesting revelation is that some neighboring counties reflect opposite net migration patterns, such as Georgia's Cobb and Fulton counties (referred to as <b><i>nearby opposite counties</i></b> below). 
+												Comparing housing and income data in these counties provides further insight into potential causes of migration.
+											</p>
+										</div>
+									</div>									
+
+									<hr>
+									<!--
+										<h2>LA County Net Migration (Nationally)
 										<br><span class="normalv2"><i>Top 50 net inmigrating and outmigrating counties (2013-2017)</i></span>
 									</h2>
 									<div class="splitscreen">
@@ -188,6 +209,114 @@
 											<p>text<br>text<br>text<br>text</p>
 										</div>
 									</div>
+									-->
+
+									<h2>What is Causing Californians to Leave?</h2>
+									<p>
+										Below I explore housing and income data from the following three angles to gauge their causal impact on migration:
+										<br>1) Comparison of the top 50 net in-migration counties against the top 50 net out-migration counties (defined <a href="#net_def" class="colored">above</a>)
+										<br>2) Comparison of nearby opposite counties (top 50 counties, all available years)
+										<br>3) Comparison of California in peak years against non-peak years
+										<br>4) Comparison of California with other states
+										<br>5) Intra-state migration (between CA counties)
+									</p>
+
+									<h3>1) Comparing Top 50 Net In-Migration and Out-Migration Counties</h3>
+									<p>
+										*<b><i>Why net migration?</i></b> I focused on net migration as opposed to total in-migration or out-migration because it highlights imbalances in migration (i.e. where migration between two counties is disproportionately one-directional).
+										Comparing housing and income data between counties where this imbalance occurs can potentially clue us in on <i>why</i> individuals are more likely to move in one direction over another.
+									</p>
+									
+									<h3>a. Housing Costs:</h3>
+									<p>
+										The first two plots below present median monthly housing costs for homeowners and renters in the top 50 net in-migration and out-migration counties.
+										Median mortgage costs in the top 50 net out-migration counties are almost all within the $1000-$2000 range, whereas almost half of the top 50 net in-migration county medians are above $2000.
+										Similarly, mediant rents in the top 50 net out-migration counties are almost all within the $800-$1200 range, whereas almost half of the top 50 net in-migration county medians are above $1200.
+										This pattern suggests that households moving to California are generally wealthier than those moving out of California, as indicated by their higher monthly housing costs.
+										Therefore, it can be deduced that <i><b>increased housing cost is positively correlated with increased migration out of California</b></i>.
+										<!--
+											Assuming that people only relocate to areas where housing costs are within their financial means, 
+										the data indicates that many Californians are moving to counties where they'll pay less for housing than those moving into California.
+										-->
+									</p>
+
+									<div class="splitscreen">
+										<div class="left1">
+											<img src="images/top50_CA_net_inmig_outmig_mort.svg" height=450>
+											<h4><span class="normal">
+												<i>*Note: circle sizes represent county net migration figures.</i>
+											</span></h4>
+										</div>
+
+										<div class="right1">
+											<img src="images/top50_CA_net_inmig_outmig_rent.svg" height=450>
+										</div>
+									</div>
+
+									<br><br>
+									<p>
+										The two charts below plot the distribution of housing costs for all of the top 50 net in-migration and net out-migration counties (layered on top of each other) and reflect the same correlation with migration as the charts above.
+									</p>
+									
+									<div class="splitscreen">
+										<div class="left1">
+											<img src="images/mort_dist_in_out.svg" height=450>
+											
+										</div>
+
+										<div class="right1">
+											<img src="images/rent_dist_in_out.svg" height=450>
+										</div>
+									</div>
+									<h4><span class="normal">
+										<i>*Note: these charts are composed of 100 histograms- one for each of the top 50 net in-migration and out-migration counties, layered over each other.</i>
+									</span></h4>
+
+									<p>- Higher mortgages and rents are more prevalent in the top net in-migration counties, as indicated by the heavier presence of gold bars on the right side of the distributions.</p>
+
+									<hr>
+									
+									<h3>b. Home Values and Income:</h3>
+									<p>
+										Similar to the charts above, median home values and incomes also reflect that in-migrators are wealthier as a group than out-migrators.
+									</p>
+									<div class="splitscreen">
+										<div class="left1">
+											<img src="images/top50_CA_net_inmig_outmig_home.svg" height=450>
+											<h4><span class="normal">
+												<i>*Shaded box represents where the majority of out-migration county values lie.</i>
+											</span></h4>
+										</div>
+
+										<div class="right1">
+											<img src="images/top50_CA_net_inmig_outmig_inc.svg" height=450>
+										</div>
+									</div>
+
+									<br>
+									
+									<div class="splitscreen">
+										<div class="left1">
+											<img src="images/top50_CA_net_inmig_outmig_hir.svg" height=450>
+											
+										</div>
+
+										<div class="right1">
+											<img src="images/top50_CA_net_inmig_outmig_rent_per.svg" height=450>
+										</div>
+									</div>
+
+									<br>
+									<p>
+										- Median home values and annual incomes are lower overall in the top 50 net out-migration counties, further supporting the hypothesis that housing and income are correlated with migration.
+										Comparing home value and rent expense relative to income reflects the same correlation, though to a lesser degree.
+									</p>
+
+									<hr> 
+
+									<h3>2) Comparing Nearby Opposite Counties</h3>
+
+
 
 									<hr class="major" />
 								</section>
