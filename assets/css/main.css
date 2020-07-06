@@ -212,6 +212,7 @@ input, select, textarea {
 
 	em, i {
 		font-style: italic;
+		font-size: 90%;
 	}
 
 	p {
