@@ -19,7 +19,7 @@
 							<span font-family: Lato, Calibri, Arial>
 								<section>
 									<br>
-                  <h1><span class="normal">Dashboarding with Tableau vs. Google Data Studio</span></h1>
+                  <h1><span class="normal">Density Mapping with Tableau vs. Mapbox</span></h1>
 									<h3><span class="normal"><i>Below I compare the density mapping capabilities of <u>Tableau</u> and <u>Mapbox</u>.</i></span></h3>
 									<br>
 									<img src="images/Dashboarding.jpeg" class="image fit">
@@ -29,25 +29,36 @@
                   <p>
                     Intro; why hexbins (or other shapes) are better for visualizing density than volume-based circles or choropleth maps
                   </p>
+
+                  <p>
+                    Tableau better for maps that aren't meant for significant user interaction (zooming, hovering, etc.), b/c backend is much slower than Mapbox and will likely result in frustratingly slow performance.
+                  </p>
+
                   <h2>1) Tableau:</h2>
-                  <div class='tableauPlaceholder' id='viz1599413865597' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrime_15994125792880&#47;SFCrime&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrime_15994125792880&#47;SFCrime' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrime_15994125792880&#47;SFCrime&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1599413865597');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='1027px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='1027px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  <div class='tableauPlaceholder' id='viz1599508903749' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash1&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash1&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash1&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1599508903749');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
                   <p>Advantages Over Mapbox:<br>
+                    - Easier to create
                     - Can embed more easily in report or dashboard<br>
-                    - Can create hexbins without other software<br>
-                    - Can create pseudo-map (e.g. each state represented by single hexagon)<br>
-                    - Dynamic hexbin sizing through display of hexbin size box (bottom left)<br>
+                    - Creating hexbins doesn't require other software<br>
+                    - Can create pseudo-maps (e.g. each state represented by single hexagon)<br>
+                    - User can adjust hexbin sizing through hexbin size box (bottom right)<br>
                     - Existing color patterns available (as opposed to creating from scratch)<br>
+                    - Can utilize Mapbox map themes in background (as demonstrated in the second map below)
                   </p>
 
                   <hr>
 
-                  <h2>2) Google Data Studio</h2>
-                  <iframe src="hoodline_map.html" width=100% height=600px></iframe>
+                  <h2>1a) Tableau (with Mapbox background):</h2>
+                  <div class='tableauPlaceholder' id='viz1599510007969' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash2&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1599510007969');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+                  <hr>
+
+                  <h2>2) Mapbox</h2>
+                  <iframe src="hoodline_map_edit_tooltip.html" width=100% height=600px></iframe>
                   <p>Advantages Over Tableau:<br>
-                      - More control over layering of map elements<br>
-                      - More control over display of map elements (e.g. label font size when zooming)<br>
-                      - More customizeable discrete color gradient<br>
+                    - Much more customization overall (map style, layering & formatting of elements- e.g. custom discrete step colors, values, and opacities)<br>
+                    - Much faster interactive functionality (e.g. hover, zoom)
                   </p>
 
 									<hr class="major" />
