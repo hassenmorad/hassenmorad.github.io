@@ -64,42 +64,11 @@
       overflow: auto;
       border-radius: 3px;
       }
-        
-      #legend {
-      padding: 10px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-      line-height: 18px;
-      height: 155px;
-      width: 140px;
-      bottom:40px;
-      right:15px;
-      }
-      
-      .legend-key {
-      display: inline-block;
-      border-radius: 20%;
-      width: 10px;
-      height: 10px;
-      margin-right: 5px;
-      }
 
       .notbold {
       font-weight: normal;
       }​
-
-      #map_title {
-      position: absolute;
-      top: 15px;
-      left:15px;
-      padding: 10px;
-      font-family: Arial, sans-serif;
-      background: rgba(255, 254, 254, 0.8);
-        }
-
-      .legend-title {
-      margin: 5px 0px;
-      }
-
+      
     </style>
   </head>
   
@@ -124,13 +93,14 @@
       map.on('mousemove', 'Crimes', function (e) {
         popup
         .setLngLat(e.lngLat)
-        .setHTML('<h2>Top Crimes:</h2>' +
+        .setHTML('<h2>Top Crimes:</h2>') 
+        /*+
           '<p><strong>' + e.features[0].properties.Offense1 + ':</strong> ' + e.features[0].properties.Count1 + 
           '<br><strong>' + e.features[0].properties.Offense2 + ':</strong> ' + e.features[0].properties.Count2 + 
           '<br><strong>' + e.features[0].properties.Offense3 + ':</strong> ' + e.features[0].properties.Count3 + 
           '<br><strong>' + e.features[0].properties.Offense4 + ':</strong> ' + e.features[0].properties.Count4 + 
           '<br><strong>' + e.features[0].properties.Offense5 + ':</strong> ' + e.features[0].properties.Count5 + 
-          '</p>')
+          '</p>')*/
         .addTo(map);
         });
 
