@@ -92,13 +92,14 @@
 
       map.on('mousemove', 'Crimes', function (e) {
         popup.setLngLat(e.lngLat).setHTML(
-          '<h2>Total Incidents: ' + e.features[0].properties.Total_Coun + '</h2>' +
+          '<h2>Total Incidents: ' + e.features[0].properties.Total_Coun + '</h2>')
+          /* +
           '<p><strong>' + e.features[0].properties.Offense1 + ':</strong> ' + e.features[0].properties.Count1 + 
           '<br><strong>' + e.features[0].properties.Offense2 + ':</strong> ' + e.features[0].properties.Count2 + 
           '<br><strong>' + e.features[0].properties.Offense3 + ':</strong> ' + e.features[0].properties.Count3 + 
           '<br><strong>' + e.features[0].properties.Offense4 + ':</strong> ' + e.features[0].properties.Count4 + 
           '<br><strong>' + e.features[0].properties.Offense5 + ':</strong> ' + e.features[0].properties.Count5 + 
-          '</p>')
+          '</p>'*/
         .addTo(map);
         });
 
