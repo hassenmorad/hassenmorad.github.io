@@ -22,43 +22,85 @@
                   <h1><span class="normal">Density Mapping with Tableau vs. Mapbox</span></h1>
 									<h3><span class="normal"><i>Below I compare the density mapping capabilities of <u>Tableau</u> and <u>Mapbox</u>.</i></span></h3>
 									<br>
-									<img src="images/Dashboarding.jpeg" class="image fit">
+									<img src="images/honeycomb_resize.jpg" class="image fit">
 									<br>
                   <h4><i>Sep 2020</i></h4>
 
                   <p>
-                    Intro; why hexbins (or other shapes) are better for visualizing density than volume-based circles or choropleth maps
+                    Density maps are useful tools for visualizing the concentration of a particular variable in a geographic region.
+                    Two traditional ways of plotting density are: (1) plotting dots for each individual data point, and (2) capturing the degree of data concentration through a heat map.
+                    A more recent and better method of plotting density is the use of hexbins, through which a honeycomb-like grid is layered over a map and color intensity indicates the degree of data concentration.
+                    Many data visualization practitioners (including myself) prefer this method in most applications since it neatly presents data density while largely avoiding issues of data distortion caused by other methods.
                   </p>
 
                   <p>
-                    Tableau better for maps that aren't meant for significant user interaction (zooming, hovering, etc.), b/c backend is much slower than Mapbox and will likely result in frustratingly slow performance.
+                    In the maps below I present applications of each method for mapping density, using data on weekly crime incidents in San Francisco, California from August 30th to September 5th, 2020.
+                    I also present a comparison of creating hexbin maps in Tableau vs. Mapbox.
                   </p>
 
-                  <h2>1) Tableau:</h2>
-                  <div class='tableauPlaceholder' id='viz1599508903749' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash1&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash1&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash1&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1599508903749');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  <div class="splitscreen">
+										<div class="left2">
+                      <h2>Plotting Individual Points</h2>
+                      <p><u>Main problems</u>: too many data points overlapping distorts the data (by hiding it) and causes the map to look messy</p>
+                      <div class='tableauPlaceholder' id='viz1600020703874' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Dots&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash2&#47;Dots' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Dots&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1600020703874');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='500px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    </div>
+                    <div class="right2">
+                      <h2>Density Heatmap:</h2>
+                      <p><u>Main problems</u>: lacks precision and blurs map underneath (can't  read street names or identify landmarks)</p>
+                      <div class='tableauPlaceholder' id='viz1600020355975' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Heat&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash2&#47;Heat' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Heat&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1600020355975');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='500px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                    </div>
+                  </div>
+                  
+                  <hr>
+                  
+                  <h2><u>Alternative: Hex Bins</u></h2>
 
-                  <p>Advantages Over Mapbox:<br>
-                    - Easier to create
-                    - Can embed more easily in report or dashboard<br>
-                    - Creating hexbins doesn't require other software<br>
-                    - Can create pseudo-maps (e.g. each state represented by single hexagon)<br>
-                    - User can adjust hexbin sizing through hexbin size box (bottom right)<br>
-                    - Existing color patterns available (as opposed to creating from scratch)<br>
-                    - Can utilize Mapbox map themes in background (as demonstrated in the second map below)
-                  </p>
+                  <div class="splitscreen">
+										<div class="left2">
+                      <h2>Tableau (default background)</h2>
+                      <div class='tableauPlaceholder' id='viz1600032317998' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Map2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash2&#47;Map2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Map2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1600032317998');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='500px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>                    </div>
+                    <div class="right2">
+                      <h2>Tableau (with Mapbox background):</h2>
+                      <div class='tableauPlaceholder' id='viz1600032264561' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Map&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash2&#47;Map' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Map&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1600032264561');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height='500px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>                    </div>
+                  </div>
 
                   <hr>
-
-                  <h2>1a) Tableau (with Mapbox background):</h2>
-                  <div class='tableauPlaceholder' id='viz1599510007969' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='SFCrimesDash2&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;SF&#47;SFCrimesDash2&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1599510007969');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height='600px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                  
+                  <p id='tab_adv'>
+                    <b>Advantages Over Mapbox:</b><br>
+                    - Easier to create<br>
+                    - Can embed seamlessly in Tableau report or dashboard<br>
+                    - Creating hexbins doesn't require other software<br> 
+                    - Can create distorted maps (e.g. <a href="US_hex_map.html"  class="colored">each state represented by a hexagon</a>)<br>
+                    <!-- - Simple implementation of hexbin size adjustment box (bottom left)<br> -->
+                    - Provides library of color themes (as opposed to creating from scratch)<br>
+                    - Can utilize Mapbox map themes in background (as demonstrated in the map below)
+                  </p>
 
                   <hr>
 
                   <h2>2) Mapbox</h2>
-                  <iframe src="hoodline_map_edit_tooltip.html" width=100% height=600px></iframe>
-                  <p>Advantages Over Tableau:<br>
-                    - Much more customization overall (map style, layering & formatting of elements- e.g. custom discrete step colors, values, and opacities)<br>
-                    - Much faster interactive functionality (e.g. hover, zoom)
+
+                  <div class="splitscreen">
+										<div class="left1">
+                      <iframe src="hoodline_map_edit_tooltip.html" width=100% height=600px></iframe>
+                    </div>
+                    <div class="right1">
+                      <p><b>Advantages Over Tableau:</b><br>
+                        - Much more customization overall 
+                        (map style, layering & formatting of elements- e.g. custom discrete step colors, values, and opacities)<br>
+                        - Much faster interactive functionality 
+                        (e.g. tooltip appears immediately on hover, and zoom is implemented with no noticeable delay)
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr>
+                  <p><b>Summary:</b>
+                    <br>
+                    For maps requiring greater customization and where the goal is to facilitate significant user interaction (zooming, hovering, etc.) then Mapbox is clearly the better choice. 
+                    It's the premier map creation tool on the market and seemingly countless features can be added through custom javascript code. 
+                    On the flip side, if extensive interactivity isn't required (since the backend is much slower than Mapbox and will likely result in frustratingly slow performance) then Tableau is probably a better tool since maps are usually much quicker and easier to create while still maintaining relatively impressive functionality and presentation.
                   </p>
 
 									<hr class="major" />
